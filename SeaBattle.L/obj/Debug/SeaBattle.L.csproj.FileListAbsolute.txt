@@ -1,0 +1,6 @@
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.L\bin\Debug\SeaBattle.L.dll
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.L\bin\Debug\SeaBattle.L.pdb
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.L\obj\Debug\SeaBattle.L.csproj.AssemblyReference.cache
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.L\obj\Debug\SeaBattle.L.csproj.CoreCompileInputs.cache
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.L\obj\Debug\SeaBattle.L.dll
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.L\obj\Debug\SeaBattle.L.pdb

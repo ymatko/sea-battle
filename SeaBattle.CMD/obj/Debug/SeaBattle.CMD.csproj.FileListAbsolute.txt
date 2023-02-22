@@ -1,0 +1,11 @@
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.CMD\bin\Debug\SeaBattle.CMD.exe.config
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.CMD\bin\Debug\SeaBattle.CMD.exe
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.CMD\bin\Debug\SeaBattle.CMD.pdb
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.CMD\bin\Debug\SeaBattle.L.dll
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.CMD\bin\Debug\SeaBattle.L.pdb
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.CMD\obj\Debug\SeaBattle.CMD.csproj.AssemblyReference.cache
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.CMD\obj\Debug\SeaBattle.CMD.csproj.SuggestedBindingRedirects.cache
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.CMD\obj\Debug\SeaBattle.CMD.csproj.CoreCompileInputs.cache
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.CMD\obj\Debug\SeaBattle.CMD.csproj.CopyComplete
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.CMD\obj\Debug\SeaBattle.CMD.exe
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.CMD\obj\Debug\SeaBattle.CMD.pdb

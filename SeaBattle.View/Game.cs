@@ -10,6 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Sockets;
 
 namespace SeaBattle.View
 {
@@ -18,23 +19,26 @@ namespace SeaBattle.View
         public Game(bool isHost, string ip = null)
         {
             InitializeComponent();
+            MessageReceiver.DoWork += MessageReceiver_DoWork;
+            CheckForIllegalCrossThreadCalls = false;
 
             if (isHost)
             {
-                PlayerChar = "You";
-                OpponentChar = "Opponent";
+                PlayerChar = 'X';
+                OpponentChar = 'O';
                 server = new TcpListener(System.Net.IPAddress.Any, 5732);
                 server.Start();
                 sock = server.AcceptSocket();
             }
             else
             {
-                PlayerChar = "Opponent";
-                OpponentChar = "You";
+                PlayerChar = 'O';
+                OpponentChar = 'X';
                 try
                 {
                     client = new TcpClient(ip, 5732);
                     sock = client.Client;
+                    MessageReceiver.RunWorkerAsync();
                 }
                 catch (Exception ex)
                 {
@@ -43,8 +47,22 @@ namespace SeaBattle.View
                 }
             }
         }
-        private string PlayerChar;
-        private string OpponentChar;
+        private void MessageReceiver_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if (CheckState())
+                return;
+            FreezeBoardY();
+            UnfreezeBoardO();
+            label1.Text = "Opponent's Turn!";
+            ReceiveMove();
+            label1.Text = "Your Trun!";
+            if (!CheckState())
+                UnfreezeBoardY();
+                FreezeBoardO(); 
+        }
+
+        private char PlayerChar;
+        private char OpponentChar;
         private Socket sock;
         private BackgroundWorker MessageReceiver = new BackgroundWorker();
         private TcpListener server = null;

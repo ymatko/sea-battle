@@ -24,21 +24,25 @@ namespace SeaBattle.View
 
             if (isHost)
             {
-                PlayerChar = 'X';
+                label2.Text = "isHost";
+                PlayerChar = 'Y';
                 OpponentChar = 'O';
                 server = new TcpListener(System.Net.IPAddress.Any, 5732);
                 server.Start();
                 sock = server.AcceptSocket();
+                FreezeBoardO();
             }
             else
             {
+                label2.Text = "isServer";
                 PlayerChar = 'O';
-                OpponentChar = 'X';
+                OpponentChar = 'Y';
                 try
                 {
                     client = new TcpClient(ip, 5732);
                     sock = client.Client;
                     MessageReceiver.RunWorkerAsync();
+                    FreezeBoardO();
                 }
                 catch (Exception ex)
                 {
@@ -49,16 +53,6 @@ namespace SeaBattle.View
         }
         private void MessageReceiver_DoWork(object sender, DoWorkEventArgs e)
         {
-            if (CheckState())
-                return;
-            FreezeBoardY();
-            UnfreezeBoardO();
-            label1.Text = "Opponent's Turn!";
-            ReceiveMove();
-            label1.Text = "Your Trun!";
-            if (!CheckState())
-                UnfreezeBoardY();
-                FreezeBoardO(); 
         }
 
         private char PlayerChar;
@@ -67,6 +61,8 @@ namespace SeaBattle.View
         private BackgroundWorker MessageReceiver = new BackgroundWorker();
         private TcpListener server = null;
         private TcpClient client;
+        private bool inGame = false;
+        List<Button> ships = new List<Button>();
 
         #region Freeze&Unfrees board
         private void FreezeBoardY()
@@ -233,6 +229,17 @@ namespace SeaBattle.View
         }
         #endregion
 
+        private void CreateShip(Button button)
+        {
+            if (ships.Count < 6)
+            {
+                button.BackColor = Color.RoyalBlue;
+                ships.Add(button);
+                button.Enabled = false;
+            }
+        }
+
+
         private void Game_FormClosing(object sender, FormClosingEventArgs e)
         {
             MessageReceiver.WorkerSupportsCancellation = true;
@@ -240,6 +247,258 @@ namespace SeaBattle.View
             if (server != null)
                 server.Stop();
         }
+
+        #region button
+        private void Btn1Y_Click(object sender, EventArgs e)
+        {
+            CreateShip(Btn1Y);
+        }
+
+        private void Btn2Y_Click(object sender, EventArgs e)
+        {
+            CreateShip(Btn2Y);
+        }
+
+        private void Btn3Y_Click(object sender, EventArgs e)
+        {
+            CreateShip(Btn3Y);
+        }
+
+        private void Btn4Y_Click(object sender, EventArgs e)
+        {
+            CreateShip(Btn4Y);
+        }
+
+        private void Btn5Y_Click(object sender, EventArgs e)
+        {
+            CreateShip(Btn5Y);
+        }
+
+        private void Btn6Y_Click(object sender, EventArgs e)
+        {
+            CreateShip(Btn6Y);
+        }
+
+        private void Btn7Y_Click(object sender, EventArgs e)
+        {
+            CreateShip(Btn7Y);
+        }
+
+        private void Btn8Y_Click(object sender, EventArgs e)
+        {
+            CreateShip(Btn8Y);
+        }
+
+        private void Btn9Y_Click(object sender, EventArgs e)
+        {
+            CreateShip(Btn9Y);
+        }
+
+        private void Btn10Y_Click(object sender, EventArgs e)
+        {
+            CreateShip(Btn10Y);
+        }
+
+        private void Btn11Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn12Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn13Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn14Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn15Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn16Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn17Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn18Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn19Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn20Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn21Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn22Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn23Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn24Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn25Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn1O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn2O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn3O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn4O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn5O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn6O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn7O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn8O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn9O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn10O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn11O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn12O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn13O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn14O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn15O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn16O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn17O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn18O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn19O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn20O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn21O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn22O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn23O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn24O_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn25O_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 
 }

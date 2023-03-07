@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TbLogin = new System.Windows.Forms.TextBox();
             this.BtnCont = new System.Windows.Forms.Button();
+            this.TbLogin = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.BtnHG = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -48,22 +48,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Connect To game";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "IP:";
-            // 
-            // TbLogin
-            // 
-            this.TbLogin.Location = new System.Drawing.Point(43, 34);
-            this.TbLogin.Name = "TbLogin";
-            this.TbLogin.Size = new System.Drawing.Size(184, 20);
-            this.TbLogin.TabIndex = 1;
-            // 
             // BtnCont
             // 
             this.BtnCont.Location = new System.Drawing.Point(233, 34);
@@ -73,6 +57,22 @@
             this.BtnCont.Text = "Connect";
             this.BtnCont.UseVisualStyleBackColor = true;
             this.BtnCont.Click += new System.EventHandler(this.BtnCont_Click);
+            // 
+            // TbLogin
+            // 
+            this.TbLogin.Location = new System.Drawing.Point(43, 34);
+            this.TbLogin.Name = "TbLogin";
+            this.TbLogin.Size = new System.Drawing.Size(184, 20);
+            this.TbLogin.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "IP:";
             // 
             // BtnHG
             // 
@@ -91,6 +91,7 @@
             this.ClientSize = new System.Drawing.Size(335, 143);
             this.Controls.Add(this.BtnHG);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "StartForm";
             this.Text = "Login";
             this.groupBox1.ResumeLayout(false);

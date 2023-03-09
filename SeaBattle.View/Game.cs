@@ -241,7 +241,8 @@ namespace SeaBattle.View
             }
             CreateShip(button);
             i++;
-            label1.Text = string.Join(" ", ships); //delete
+            string shipslable = string.Join(" ", ships); //delete
+            label1.Text = shipslable;
         }
         private void ReceiveMove()
         {
@@ -249,104 +250,116 @@ namespace SeaBattle.View
             sock.Receive(buffer);
             if (buffer[0] == 1)
             {
-                if (ships.Contains(Btn1Y.Text))
-                {
-                    Btn1Y.BackColor = Color.Yellow; //delete
-                    label3.Text = "You hit"; //delete
-                }
-                else
-                {
-                    label3.Text = "Miss"; //delete
-                }
+                ButtonRecive(Btn1Y);
             }
             if (buffer[0] == 2)
             {
-                if (ships.Contains(Btn2Y.Text))
-                {
-                    Btn2Y.BackColor = Color.Yellow; //delete
-                    label3.Text = "You hit"; //delete
-                }
-                else
-                {
-                    label3.Text = "Miss"; //delete
-                }
+                ButtonRecive(Btn2Y);
             }
             if (buffer[0] == 3)
             {
-                if (ships.Contains(Btn3Y.Text))
-                {
-                    Btn3Y.BackColor = Color.Yellow; //delete
-                    label3.Text = "You hit"; //delete
-                }
-                else
-                {
-                    label3.Text = "Miss"; //delete
-                }
+                ButtonRecive(Btn3Y);
             }
             if (buffer[0] == 4)
             {
-                if (ships.Contains(Btn4Y.Text))
-                {
-                    Btn4Y.BackColor = Color.Yellow; //delete
-                    label3.Text = "You hit"; //delete
-                }
-                else
-                {
-                    label3.Text = "Miss"; //delete
-                }
+                ButtonRecive(Btn4Y);
             }
             if (buffer[0] == 5)
             {
-                if (ships.Contains(Btn5Y.Text))
-                {
-                    Btn5Y.BackColor = Color.Yellow; //delete
-                    label3.Text = "You hit"; //delete
-                }
-                else
-                {
-                    label3.Text = "Miss"; //delete
-                }
+                ButtonRecive(Btn5Y);
             }
             if (buffer[0] == 6)
-                Btn6Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn6Y);
+            }
             if (buffer[0] == 7)
-                Btn7Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn7Y);
+            }
             if (buffer[0] == 8)
-                Btn8Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn8Y);
+            }
             if (buffer[0] == 9)
-                Btn9Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn9Y);
+            }
             if (buffer[0] == 10)
-                Btn10Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn10Y);
+            }
             if (buffer[0] == 11)
-                Btn11Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn11Y);
+            }
             if (buffer[0] == 12)
-                Btn12Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn12Y);
+            }
             if (buffer[0] == 13)
-                Btn13Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn13Y);
+            }
             if (buffer[0] == 14)
-                Btn14Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn14Y);
+            }
             if (buffer[0] == 15)
-                Btn15Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn15Y);
+            }
             if (buffer[0] == 16)
-                Btn16Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn16Y);
+            }
             if (buffer[0] == 17)
-                Btn17Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn17Y);
+            }
             if (buffer[0] == 18)
-                Btn18Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn18Y);
+            }
             if (buffer[0] == 19)
-                Btn19Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn19Y);
+            }
             if (buffer[0] == 20)
-                Btn20Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn20Y);
+            }
             if (buffer[0] == 21)
-                Btn21Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn21Y);
+            }
             if (buffer[0] == 22)
-                Btn22Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn22Y);
+            }
             if (buffer[0] == 23)
-                Btn23Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn23Y);
+            }
             if (buffer[0] == 24)
-                Btn24Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn24Y);
+            }
             if (buffer[0] == 25)
-                Btn25Y.BackColor = Color.Red;
+            {
+                ButtonRecive(Btn25Y);
+            }
+        }
+
+        private void ButtonRecive(Button button)
+        {
+            if (button.BackColor == Color.RoyalBlue)
+            {
+                button.BackColor = Color.Red;
+            }
+            else
+            {
+                button.Text = "X";
+            }
         }
 
         private void Game_FormClosing(object sender, FormClosingEventArgs e)
@@ -357,7 +370,7 @@ namespace SeaBattle.View
                 server.Stop();
         }
 
-        #region button
+        #region buttonY
         private void Btn1Y_Click(object sender, EventArgs e)
         {
             StartGame(Btn1Y);
@@ -482,9 +495,11 @@ namespace SeaBattle.View
         {
             StartGame(Btn25Y);
         }
-
+        #endregion
+        #region buttonO
         private void Btn1O_Click(object sender, EventArgs e)
         {
+            
             byte[] num = { 1 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -501,7 +516,6 @@ namespace SeaBattle.View
         {
             byte[] num = { 3 };
             sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
         }
 
         private void Btn4O_Click(object sender, EventArgs e)

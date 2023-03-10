@@ -1,0 +1,12 @@
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.View\bin\Debug\SeaBattle.View.exe.config
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.View\bin\Debug\SeaBattle.View.exe
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.View\bin\Debug\SeaBattle.View.pdb
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.View\obj\Debug\SeaBattle.csproj.AssemblyReference.cache
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.View\obj\Debug\SeaBattle.csproj.SuggestedBindingRedirects.cache
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.View\obj\Debug\SeaBattle.View.Game.resources
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.View\obj\Debug\SeaBattle.View.StartForm.resources
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.View\obj\Debug\SeaBattle.View.Properties.Resources.resources
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.View\obj\Debug\SeaBattle.csproj.GenerateResource.cache
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.View\obj\Debug\SeaBattle.csproj.CoreCompileInputs.cache
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.View\obj\Debug\SeaBattle.View.exe
+C:\Users\n246v\Desktop\C#\SeaBattle\SeaBattle.View\obj\Debug\SeaBattle.View.pdb

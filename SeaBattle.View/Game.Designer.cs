@@ -82,6 +82,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -93,8 +94,6 @@
             this.Btn1Y.Size = new System.Drawing.Size(30, 30);
             this.Btn1Y.TabIndex = 0;
             this.Btn1Y.UseVisualStyleBackColor = true;
-            this.Btn2Y.Click += new System.EventHandler(this.Btn1Y_Click);
-
             // 
             // Btn2Y
             // 
@@ -623,11 +622,21 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "label2";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(237, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "label3";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 288);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
@@ -698,5 +707,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

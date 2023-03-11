@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net.Sockets;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
@@ -26,9 +27,13 @@ namespace SeaBattle.View
                 server = new TcpListener(System.Net.IPAddress.Any, 5732);
                 server.Start();
                 sock = server.AcceptSocket();
+                FreezeBoardO();
+                UnfreezeBoardY();
             }
             else
             {
+                FreezeBoardO();
+                UnfreezeBoardY();
                 label1.Text = "isHost";
                 try
                 {
@@ -60,16 +65,21 @@ namespace SeaBattle.View
             if (ships.Count > 0) // +2
             {
                 FreezeBoardY();
-                UnfreezeBoardO();
+                UnfreezeBoardO(); //////////////
+
             }
             CreateShip(button);
-            label1.Text = string.Join(" ", ships); //delete
+            label2.Text = string.Join(" ", ships); //delete
+
         }
         private void CreateShip(Button button)
         {
             button.BackColor = Color.RoyalBlue;
-            button.Enabled = false; 
+            button.Enabled = false;
             ships.Add(button.Name);
+            //byte[] listByte = Encoding.UTF8.GetBytes(button.Text);
+            //sock.Send(listByte);
+            //MessageReceiver.RunWorkerAsync();
         }
         private void ButtonRecive(Button button)
         {
@@ -84,107 +94,89 @@ namespace SeaBattle.View
         }
         private void ReceiveMove()
         {
-            byte[] buffer = new byte[1];
+            byte[] buffer = new byte[2024];
             sock.Receive(buffer);
-            if (buffer[0] == 1)
+            switch (buffer[0])
             {
-                ButtonRecive(Btn1Y);
-            }
-            if (buffer[0] == 2)
-            {
-                ButtonRecive(Btn2Y);
-            }
-            if (buffer[0] == 3)
-            {
-                ButtonRecive(Btn3Y);
-            }
-            if (buffer[0] == 4)
-            {
-                ButtonRecive(Btn4Y);
-            }
-            if (buffer[0] == 5)
-            {
-                ButtonRecive(Btn5Y);
-            }
-            if (buffer[0] == 6)
-            {
-                ButtonRecive(Btn6Y);
-            }
-            if (buffer[0] == 7)
-            {
-                ButtonRecive(Btn7Y);
-            }
-            if (buffer[0] == 8)
-            {
-                ButtonRecive(Btn8Y);
-            }
-            if (buffer[0] == 9)
-            {
-                ButtonRecive(Btn9Y);
-            }
-            if (buffer[0] == 10)
-            {
-                ButtonRecive(Btn10Y);
-            }
-            if (buffer[0] == 11)
-            {
-                ButtonRecive(Btn11Y);
-            }
-            if (buffer[0] == 12)
-            {
-                ButtonRecive(Btn12Y);
-            }
-            if (buffer[0] == 13)
-            {
-                ButtonRecive(Btn13Y);
-            }
-            if (buffer[0] == 14)
-            {
-                ButtonRecive(Btn14Y);
-            }
-            if (buffer[0] == 15)
-            {
-                ButtonRecive(Btn15Y);
-            }
-            if (buffer[0] == 16)
-            {
-                ButtonRecive(Btn16Y);
-            }
-            if (buffer[0] == 17)
-            {
-                ButtonRecive(Btn17Y);
-            }
-            if (buffer[0] == 18)
-            {
-                ButtonRecive(Btn18Y);
-            }
-            if (buffer[0] == 19)
-            {
-                ButtonRecive(Btn19Y);
-            }
-            if (buffer[0] == 20)
-            {
-                ButtonRecive(Btn20Y);
-            }
-            if (buffer[0] == 21)
-            {
-                ButtonRecive(Btn21Y);
-            }
-            if (buffer[0] == 22)
-            {
-                ButtonRecive(Btn22Y);
-            }
-            if (buffer[0] == 23)
-            {
-                ButtonRecive(Btn23Y);
-            }
-            if (buffer[0] == 24)
-            {
-                ButtonRecive(Btn24Y);
-            }
-            if (buffer[0] == 25)
-            {
-                ButtonRecive(Btn25Y);
+                case 1:
+                    ButtonRecive(Btn1Y);
+                    break;
+                case 2:
+                    ButtonRecive(Btn2Y);
+                    break;
+                case 3:
+                    ButtonRecive(Btn3Y);
+                    break;
+                case 4:
+                    ButtonRecive(Btn4Y);
+                    break;
+                case 5:
+                    ButtonRecive(Btn5Y);
+                    break;
+                case 6:
+                    ButtonRecive(Btn6Y);
+                    break;
+                case 7:
+                    ButtonRecive(Btn7Y);
+                    break;
+                case 8:
+                    ButtonRecive(Btn8Y);
+                    break;
+                case 9:
+                    ButtonRecive(Btn9Y);
+                    break;
+                case 10:
+                    ButtonRecive(Btn10Y);
+                    break;
+                case 11:
+                    ButtonRecive(Btn11Y);
+                    break;
+                case 12:
+                    ButtonRecive(Btn12Y);
+                    break;
+                case 13:
+                    ButtonRecive(Btn13Y);
+                    break;
+                case 14:
+                    ButtonRecive(Btn14Y);
+                    break;
+                case 15:
+                    ButtonRecive(Btn15Y);
+                    break;
+                case 16:
+                    ButtonRecive(Btn16Y);
+                    break;
+                case 17:
+                    ButtonRecive(Btn17Y);
+                    break;
+                case 18:
+                    ButtonRecive(Btn18Y);
+                    break;
+                case 19:
+                    ButtonRecive(Btn19Y);
+                    break;
+                case 20:
+                    ButtonRecive(Btn20Y);
+                    break;
+                case 21:
+                    ButtonRecive(Btn21Y);
+                    break;
+                case 22:
+                    ButtonRecive(Btn22Y);
+                    break;
+                case 23:
+                    ButtonRecive(Btn23Y);
+                    break;
+                case 24:
+                    ButtonRecive(Btn24Y);
+                    break;
+                case 25:
+                    ButtonRecive(Btn25Y);
+                    break;
+                //default:
+                //    var ships2 = Encoding.UTF8.GetString(buffer);
+                //    label3.Text = ships2;
+                //    break;
             }
         }
         #region BtnY

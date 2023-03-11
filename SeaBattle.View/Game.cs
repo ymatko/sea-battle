@@ -4,13 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net.Sockets;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net.Sockets;
 
 namespace SeaBattle.View
 {
@@ -23,28 +23,28 @@ namespace SeaBattle.View
 
             if (isServer)
             {
-                label2.Text = "isServer";
+                label1.Text = "isServer";
                 server = new TcpListener(System.Net.IPAddress.Any, 5732);
                 server.Start();
                 sock = server.AcceptSocket();
                 FreezeBoardO();
+                UnfreezeBoardY();
             }
             else
             {
-                label2.Text = "isHost";
+                FreezeBoardO();
+                UnfreezeBoardY();
+                label1.Text = "isHost";
                 try
                 {
                     client = new TcpClient(ip, 5732);
                     sock = client.Client;
-                    MessageReceiver.RunWorkerAsync();
-                    FreezeBoardO();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                     Close();
                 }
-                FreezeBoardO();
             }
         }
         private void MessageReceiver_DoWork(object sender, DoWorkEventArgs e)
@@ -55,11 +55,458 @@ namespace SeaBattle.View
         }
 
         private Socket sock;
-        private BackgroundWorker MessageReceiver = new BackgroundWorker();
         private TcpListener server = null;
         private TcpClient client;
         List<string> ships = new List<string>();
-        int i = 0;
+        private BackgroundWorker MessageReceiver = new BackgroundWorker();
+
+        private void StartGame(Button button)
+        {
+            if (ships.Count > 0) // +2
+            {
+                FreezeBoardY();
+                UnfreezeBoardO(); //////////////
+
+            }
+            CreateShip(button);
+            label2.Text = string.Join(" ", ships); //delete
+
+        }
+        private void CreateShip(Button button)
+        {
+            button.BackColor = Color.RoyalBlue;
+            button.Enabled = false;
+            ships.Add(button.Name);
+            //byte[] listByte = Encoding.UTF8.GetBytes(button.Text);
+            //sock.Send(listByte);
+            //MessageReceiver.RunWorkerAsync();
+        }
+        private void ButtonRecive(Button button)
+        {
+            if (button.BackColor == Color.RoyalBlue)
+            {
+                button.BackColor = Color.Red; ////////
+            }
+            else
+            {
+                button.Text = "X";
+            }
+        }
+        private void ReceiveMove()
+        {
+            byte[] buffer = new byte[2024];
+            sock.Receive(buffer);
+            switch (buffer[0])
+            {
+                case 1:
+                    ButtonRecive(Btn1Y);
+                    break;
+                case 2:
+                    ButtonRecive(Btn2Y);
+                    break;
+                case 3:
+                    ButtonRecive(Btn3Y);
+                    break;
+                case 4:
+                    ButtonRecive(Btn4Y);
+                    break;
+                case 5:
+                    ButtonRecive(Btn5Y);
+                    break;
+                case 6:
+                    ButtonRecive(Btn6Y);
+                    break;
+                case 7:
+                    ButtonRecive(Btn7Y);
+                    break;
+                case 8:
+                    ButtonRecive(Btn8Y);
+                    break;
+                case 9:
+                    ButtonRecive(Btn9Y);
+                    break;
+                case 10:
+                    ButtonRecive(Btn10Y);
+                    break;
+                case 11:
+                    ButtonRecive(Btn11Y);
+                    break;
+                case 12:
+                    ButtonRecive(Btn12Y);
+                    break;
+                case 13:
+                    ButtonRecive(Btn13Y);
+                    break;
+                case 14:
+                    ButtonRecive(Btn14Y);
+                    break;
+                case 15:
+                    ButtonRecive(Btn15Y);
+                    break;
+                case 16:
+                    ButtonRecive(Btn16Y);
+                    break;
+                case 17:
+                    ButtonRecive(Btn17Y);
+                    break;
+                case 18:
+                    ButtonRecive(Btn18Y);
+                    break;
+                case 19:
+                    ButtonRecive(Btn19Y);
+                    break;
+                case 20:
+                    ButtonRecive(Btn20Y);
+                    break;
+                case 21:
+                    ButtonRecive(Btn21Y);
+                    break;
+                case 22:
+                    ButtonRecive(Btn22Y);
+                    break;
+                case 23:
+                    ButtonRecive(Btn23Y);
+                    break;
+                case 24:
+                    ButtonRecive(Btn24Y);
+                    break;
+                case 25:
+                    ButtonRecive(Btn25Y);
+                    break;
+                //default:
+                //    var ships2 = Encoding.UTF8.GetString(buffer);
+                //    label3.Text = ships2;
+                //    break;
+            }
+        }
+        #region BtnY
+        private void Btn1Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn1Y);
+        }
+
+        private void Btn2Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn2Y);
+        }
+
+        private void Btn3Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn3Y);
+        }
+
+        private void Btn4Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn4Y);
+        }
+
+        private void Btn5Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn5Y);
+        }
+
+        private void Btn6Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn6Y);
+        }
+
+        private void Btn7Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn7Y);
+        }
+
+        private void Btn8Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn8Y);
+        }
+
+        private void Btn9Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn9Y);
+        }
+
+        private void Btn10Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn10Y);
+        }
+
+        private void Btn11Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn11Y);
+        }
+
+        private void Btn12Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn12Y);
+        }
+
+        private void Btn13Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn13Y);
+        }
+
+        private void Btn14Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn14Y);
+        }
+
+        private void Btn15Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn15Y);
+        }
+
+        private void Btn16Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn16Y);
+        }
+
+        private void Btn17Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn17Y);
+        }
+
+        private void Btn18Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn18Y);
+        }
+
+        private void Btn19Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn19Y);
+        }
+
+        private void Btn20Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn20Y);
+        }
+
+        private void Btn21Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn21Y);
+        }
+
+        private void Btn22Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn22Y);
+        }
+
+        private void Btn23Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn23Y);
+        }
+
+        private void Btn24Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn24Y);
+        }
+
+        private void Btn25Y_Click(object sender, EventArgs e)
+        {
+            StartGame(Btn25Y);
+        }
+        #endregion
+        #region BtnO
+        private void Btn1O_Click(object sender, EventArgs e)
+        {
+
+            byte[] num = { 1 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn2O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 2 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn3O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 3 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn4O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 4 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn5O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 5 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn6O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 6 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn7O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 7 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn8O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 8 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn9O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 9 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn10O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 10 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn11O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 11 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn12O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 12 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn13O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 13 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn14O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 14 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn15O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 15 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn16O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 16 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn17O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 17 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn18O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 18 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn19O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 19 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn20O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 20 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn21O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 21 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn22O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 22 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn23O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 23 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        private void Btn24O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 24 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+        private void Btn25O_Click(object sender, EventArgs e)
+        {
+            byte[] num = { 25 };
+            sock.Send(num);
+            MessageReceiver.RunWorkerAsync();
+            FreezeBoardO();
+        }
+
+        #endregion
         #region Freeze&Unfrees board
         private void FreezeBoardY()
         {
@@ -224,144 +671,6 @@ namespace SeaBattle.View
                 Btn25O.Enabled = true;
         }
         #endregion
-
-        private void CreateShip (Button button)
-        {
-            button.BackColor = Color.RoyalBlue;
-            button.Enabled = false;
-            ships.Add(button.Name);
-        }
-
-        private void StartGame(Button button)
-        {
-            if (i == 5)
-            {
-                FreezeBoardY();
-                UnfreezeBoardO();
-            }
-            CreateShip(button);
-            i++;
-            string shipslable = string.Join(" ", ships); //delete
-            label1.Text = shipslable;
-        }
-        private void ReceiveMove()
-        {
-            byte[] buffer = new byte[1];
-            sock.Receive(buffer);
-            if (buffer[0] == 1)
-            {
-                ButtonRecive(Btn1Y);
-            }
-            if (buffer[0] == 2)
-            {
-                ButtonRecive(Btn2Y);
-            }
-            if (buffer[0] == 3)
-            {
-                ButtonRecive(Btn3Y);
-            }
-            if (buffer[0] == 4)
-            {
-                ButtonRecive(Btn4Y);
-            }
-            if (buffer[0] == 5)
-            {
-                ButtonRecive(Btn5Y);
-            }
-            if (buffer[0] == 6)
-            {
-                ButtonRecive(Btn6Y);
-            }
-            if (buffer[0] == 7)
-            {
-                ButtonRecive(Btn7Y);
-            }
-            if (buffer[0] == 8)
-            {
-                ButtonRecive(Btn8Y);
-            }
-            if (buffer[0] == 9)
-            {
-                ButtonRecive(Btn9Y);
-            }
-            if (buffer[0] == 10)
-            {
-                ButtonRecive(Btn10Y);
-            }
-            if (buffer[0] == 11)
-            {
-                ButtonRecive(Btn11Y);
-            }
-            if (buffer[0] == 12)
-            {
-                ButtonRecive(Btn12Y);
-            }
-            if (buffer[0] == 13)
-            {
-                ButtonRecive(Btn13Y);
-            }
-            if (buffer[0] == 14)
-            {
-                ButtonRecive(Btn14Y);
-            }
-            if (buffer[0] == 15)
-            {
-                ButtonRecive(Btn15Y);
-            }
-            if (buffer[0] == 16)
-            {
-                ButtonRecive(Btn16Y);
-            }
-            if (buffer[0] == 17)
-            {
-                ButtonRecive(Btn17Y);
-            }
-            if (buffer[0] == 18)
-            {
-                ButtonRecive(Btn18Y);
-            }
-            if (buffer[0] == 19)
-            {
-                ButtonRecive(Btn19Y);
-            }
-            if (buffer[0] == 20)
-            {
-                ButtonRecive(Btn20Y);
-            }
-            if (buffer[0] == 21)
-            {
-                ButtonRecive(Btn21Y);
-            }
-            if (buffer[0] == 22)
-            {
-                ButtonRecive(Btn22Y);
-            }
-            if (buffer[0] == 23)
-            {
-                ButtonRecive(Btn23Y);
-            }
-            if (buffer[0] == 24)
-            {
-                ButtonRecive(Btn24Y);
-            }
-            if (buffer[0] == 25)
-            {
-                ButtonRecive(Btn25Y);
-            }
-        }
-
-        private void ButtonRecive(Button button)
-        {
-            if (button.BackColor == Color.RoyalBlue)
-            {
-                button.BackColor = Color.Red;
-            }
-            else
-            {
-                button.Text = "X";
-            }
-        }
-
         private void Game_FormClosing(object sender, FormClosingEventArgs e)
         {
             MessageReceiver.WorkerSupportsCancellation = true;
@@ -369,309 +678,5 @@ namespace SeaBattle.View
             if (server != null)
                 server.Stop();
         }
-
-        #region buttonY
-        private void Btn1Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn1Y);
-        }
-
-        private void Btn2Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn2Y);
-        }
-
-        private void Btn3Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn3Y);
-        }
-
-        private void Btn4Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn4Y);
-        }
-
-        private void Btn5Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn5Y);
-        }
-
-        private void Btn6Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn6Y);
-        }
-
-        private void Btn7Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn7Y);
-        }
-
-        private void Btn8Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn8Y);
-        }
-
-        private void Btn9Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn9Y);
-        }
-
-        private void Btn10Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn10Y);
-        }
-
-        private void Btn11Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn11Y);
-        }
-
-        private void Btn12Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn12Y);
-        }
-
-        private void Btn13Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn13Y);
-        }
-
-        private void Btn14Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn14Y);
-        }
-
-        private void Btn15Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn15Y);
-        }
-
-        private void Btn16Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn16Y);
-        }
-
-        private void Btn17Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn17Y);
-        }
-
-        private void Btn18Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn18Y);
-        }
-
-        private void Btn19Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn19Y);
-        }
-
-        private void Btn20Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn20Y);
-        }
-
-        private void Btn21Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn21Y);
-        }
-
-        private void Btn22Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn22Y);
-        }
-
-        private void Btn23Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn23Y);
-        }
-
-        private void Btn24Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn24Y);
-        }
-
-        private void Btn25Y_Click(object sender, EventArgs e)
-        {
-            StartGame(Btn25Y);
-        }
-        #endregion
-        #region buttonO
-        private void Btn1O_Click(object sender, EventArgs e)
-        {
-            
-            byte[] num = { 1 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn2O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 2 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn3O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 3 };
-            sock.Send(num);
-        }
-
-        private void Btn4O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 4 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn5O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 5 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn6O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 6 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn7O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 7 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn8O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 8 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn9O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 9 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn10O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 10 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn11O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 11 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn12O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 12 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn13O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 13 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn14O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 14 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn15O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 15 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn16O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 16 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn17O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 17 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn18O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 18 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn19O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 19 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn20O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 20 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn21O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 21 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn22O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 22 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn23O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 23 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn24O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 24 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-
-        private void Btn25O_Click(object sender, EventArgs e)
-        {
-            byte[] num = { 25 };
-            sock.Send(num);
-            MessageReceiver.RunWorkerAsync();
-        }
-        #endregion
     }
-
 }

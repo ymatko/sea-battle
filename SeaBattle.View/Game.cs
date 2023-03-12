@@ -58,18 +58,27 @@ namespace SeaBattle.View
         private TcpListener server = null;
         private TcpClient client;
         List<string> ships = new List<string>();
+        List<string> shipsO = new List<string>();
+
         private BackgroundWorker MessageReceiver = new BackgroundWorker();
+
+        string shipsYO;
 
         private void StartGame(Button button)
         {
-            if (ships.Count > 0) // +2
+            if ((ships.Count - 1) > 1) // +2
             {
+                
                 FreezeBoardY();
                 UnfreezeBoardO(); //////////////
+                byte[] ship = Encoding.UTF8.GetBytes(shipsYO);
+                sock.Send(ship);
+                MessageReceiver.RunWorkerAsync();
 
             }
             CreateShip(button);
-            label2.Text = string.Join(" ", ships); //delete
+
+            //delete
 
         }
         private void CreateShip(Button button)
@@ -77,6 +86,7 @@ namespace SeaBattle.View
             button.BackColor = Color.RoyalBlue;
             button.Enabled = false;
             ships.Add(button.Name);
+            shipsYO += button.Name;
             //byte[] listByte = Encoding.UTF8.GetBytes(button.Text);
             //sock.Send(listByte);
             //MessageReceiver.RunWorkerAsync();
@@ -173,10 +183,9 @@ namespace SeaBattle.View
                 case 25:
                     ButtonRecive(Btn25Y);
                     break;
-                //default:
-                //    var ships2 = Encoding.UTF8.GetString(buffer);
-                //    label3.Text = ships2;
-                //    break;
+                default:
+                    label3.Text = Encoding.UTF8.GetString(buffer);
+                    break;
             }
         }
         #region BtnY
@@ -188,21 +197,25 @@ namespace SeaBattle.View
         private void Btn2Y_Click(object sender, EventArgs e)
         {
             StartGame(Btn2Y);
+
         }
 
         private void Btn3Y_Click(object sender, EventArgs e)
         {
             StartGame(Btn3Y);
+
         }
 
         private void Btn4Y_Click(object sender, EventArgs e)
         {
             StartGame(Btn4Y);
+
         }
 
         private void Btn5Y_Click(object sender, EventArgs e)
         {
             StartGame(Btn5Y);
+
         }
 
         private void Btn6Y_Click(object sender, EventArgs e)

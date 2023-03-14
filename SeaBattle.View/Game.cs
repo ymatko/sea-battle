@@ -58,50 +58,64 @@ namespace SeaBattle.View
         private TcpListener server = null;
         private TcpClient client;
         List<string> ships = new List<string>();
-        List<string> shipsO = new List<string>();
-
         private BackgroundWorker MessageReceiver = new BackgroundWorker();
-
-        string shipsYO;
+        int shipsCount = 0;
+        string shipsY;
 
         private void StartGame(Button button)
         {
-            if ((ships.Count - 1) > 1) // +2
+            if (shipsCount >= 2)
             {
-                
-                FreezeBoardY();
-                UnfreezeBoardO(); //////////////
-                byte[] ship = Encoding.UTF8.GetBytes(shipsYO);
-                sock.Send(ship);
-                MessageReceiver.RunWorkerAsync();
-
+                SendShipsForOpponent();
             }
-            CreateShip(button);
-
-            //delete
-
+            else
+            {
+                CreateShip(button);
+                if (shipsCount == 2)
+                    StartGame(button);
+            }
         }
+
+        private void SendShipsForOpponent()
+        {
+            FreezeBoardY();
+            UnfreezeBoardO();
+            byte[] ship = Encoding.UTF8.GetBytes(string.Join(" ", ships));
+            sock.Send(ship);
+            MessageReceiver.RunWorkerAsync();
+        }
+
+
         private void CreateShip(Button button)
         {
-            button.BackColor = Color.RoyalBlue;
             button.Enabled = false;
-            ships.Add(button.Name);
-            shipsYO += button.Name;
-            //byte[] listByte = Encoding.UTF8.GetBytes(button.Text);
-            //sock.Send(listByte);
-            //MessageReceiver.RunWorkerAsync();
+            button.BackColor = Color.RoyalBlue;
+            string shipName = button.Name.Substring(0, button.Name.Length - 1) + "O"; 
+            ships.Add(shipName);
+            shipsCount++;
         }
+
         private void ButtonRecive(Button button)
         {
             if (button.BackColor == Color.RoyalBlue)
             {
-                button.BackColor = Color.Red; ////////
+                button.BackColor = Color.Red; 
             }
             else
             {
                 button.Text = "X";
             }
         }
+
+        private void CheckShip(Button button)
+        {
+            int isShips = shipsY.IndexOf(button.Name);
+            if(isShips != -1)
+                button.BackColor = Color.Red;
+            else
+                button.Text = "X";
+        }
+
         private void ReceiveMove()
         {
             byte[] buffer = new byte[2024];
@@ -184,7 +198,7 @@ namespace SeaBattle.View
                     ButtonRecive(Btn25Y);
                     break;
                 default:
-                    label3.Text = Encoding.UTF8.GetString(buffer);
+                    shipsY = Encoding.UTF8.GetString(buffer);
                     break;
             }
         }
@@ -321,7 +335,7 @@ namespace SeaBattle.View
         #region BtnO
         private void Btn1O_Click(object sender, EventArgs e)
         {
-
+            CheckShip(Btn1O);
             byte[] num = { 1 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -330,6 +344,7 @@ namespace SeaBattle.View
 
         private void Btn2O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn2O);
             byte[] num = { 2 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -338,6 +353,7 @@ namespace SeaBattle.View
 
         private void Btn3O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn3O);
             byte[] num = { 3 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -346,6 +362,7 @@ namespace SeaBattle.View
 
         private void Btn4O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn4O);
             byte[] num = { 4 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -354,6 +371,7 @@ namespace SeaBattle.View
 
         private void Btn5O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn5O);
             byte[] num = { 5 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -362,6 +380,7 @@ namespace SeaBattle.View
 
         private void Btn6O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn6O);
             byte[] num = { 6 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -370,6 +389,7 @@ namespace SeaBattle.View
 
         private void Btn7O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn7O);
             byte[] num = { 7 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -378,6 +398,7 @@ namespace SeaBattle.View
 
         private void Btn8O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn8O);
             byte[] num = { 8 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -386,6 +407,7 @@ namespace SeaBattle.View
 
         private void Btn9O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn9O);
             byte[] num = { 9 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -394,6 +416,7 @@ namespace SeaBattle.View
 
         private void Btn10O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn10O);
             byte[] num = { 10 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -402,6 +425,7 @@ namespace SeaBattle.View
 
         private void Btn11O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn11O);
             byte[] num = { 11 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -410,6 +434,7 @@ namespace SeaBattle.View
 
         private void Btn12O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn12O);
             byte[] num = { 12 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -418,6 +443,7 @@ namespace SeaBattle.View
 
         private void Btn13O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn13O);
             byte[] num = { 13 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -426,6 +452,7 @@ namespace SeaBattle.View
 
         private void Btn14O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn14O);
             byte[] num = { 14 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -434,6 +461,7 @@ namespace SeaBattle.View
 
         private void Btn15O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn15O);
             byte[] num = { 15 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -442,6 +470,7 @@ namespace SeaBattle.View
 
         private void Btn16O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn16O);
             byte[] num = { 16 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -450,6 +479,7 @@ namespace SeaBattle.View
 
         private void Btn17O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn17O);
             byte[] num = { 17 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -458,6 +488,7 @@ namespace SeaBattle.View
 
         private void Btn18O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn18O);
             byte[] num = { 18 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -466,6 +497,7 @@ namespace SeaBattle.View
 
         private void Btn19O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn19O);
             byte[] num = { 19 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -474,6 +506,7 @@ namespace SeaBattle.View
 
         private void Btn20O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn20O);
             byte[] num = { 20 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -482,6 +515,7 @@ namespace SeaBattle.View
 
         private void Btn21O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn21O);
             byte[] num = { 21 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -490,6 +524,7 @@ namespace SeaBattle.View
 
         private void Btn22O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn22O);
             byte[] num = { 22 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -498,6 +533,7 @@ namespace SeaBattle.View
 
         private void Btn23O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn23O);
             byte[] num = { 23 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -506,6 +542,7 @@ namespace SeaBattle.View
 
         private void Btn24O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn24O);
             byte[] num = { 24 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();
@@ -513,6 +550,7 @@ namespace SeaBattle.View
         }
         private void Btn25O_Click(object sender, EventArgs e)
         {
+            CheckShip(Btn25O);
             byte[] num = { 25 };
             sock.Send(num);
             MessageReceiver.RunWorkerAsync();

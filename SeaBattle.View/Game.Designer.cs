@@ -94,6 +94,7 @@
             this.Btn1Y.Size = new System.Drawing.Size(30, 30);
             this.Btn1Y.TabIndex = 0;
             this.Btn1Y.UseVisualStyleBackColor = true;
+            this.Btn1Y.Click += new System.EventHandler(this.Btn1Y_Click);
             // 
             // Btn2Y
             // 

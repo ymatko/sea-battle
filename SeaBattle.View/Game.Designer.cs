@@ -81,458 +81,506 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Btn1Y
             // 
-            this.Btn1Y.Location = new System.Drawing.Point(10, 19);
+            this.Btn1Y.Location = new System.Drawing.Point(27, 45);
+            this.Btn1Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn1Y.Name = "Btn1Y";
-            this.Btn1Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn1Y.Size = new System.Drawing.Size(80, 72);
             this.Btn1Y.TabIndex = 0;
             this.Btn1Y.UseVisualStyleBackColor = true;
             this.Btn1Y.Click += new System.EventHandler(this.Btn1Y_Click);
             // 
             // Btn2Y
             // 
-            this.Btn2Y.Location = new System.Drawing.Point(46, 19);
+            this.Btn2Y.Location = new System.Drawing.Point(123, 45);
+            this.Btn2Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn2Y.Name = "Btn2Y";
-            this.Btn2Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn2Y.Size = new System.Drawing.Size(80, 72);
             this.Btn2Y.TabIndex = 0;
             this.Btn2Y.UseVisualStyleBackColor = true;
             this.Btn2Y.Click += new System.EventHandler(this.Btn2Y_Click);
             // 
             // Btn3Y
             // 
-            this.Btn3Y.Location = new System.Drawing.Point(82, 19);
+            this.Btn3Y.Location = new System.Drawing.Point(219, 45);
+            this.Btn3Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn3Y.Name = "Btn3Y";
-            this.Btn3Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn3Y.Size = new System.Drawing.Size(80, 72);
             this.Btn3Y.TabIndex = 0;
             this.Btn3Y.UseVisualStyleBackColor = true;
             this.Btn3Y.Click += new System.EventHandler(this.Btn3Y_Click);
             // 
             // Btn4Y
             // 
-            this.Btn4Y.Location = new System.Drawing.Point(118, 19);
+            this.Btn4Y.Location = new System.Drawing.Point(315, 45);
+            this.Btn4Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn4Y.Name = "Btn4Y";
-            this.Btn4Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn4Y.Size = new System.Drawing.Size(80, 72);
             this.Btn4Y.TabIndex = 0;
             this.Btn4Y.UseVisualStyleBackColor = true;
             this.Btn4Y.Click += new System.EventHandler(this.Btn4Y_Click);
             // 
             // Btn5Y
             // 
-            this.Btn5Y.Location = new System.Drawing.Point(154, 19);
+            this.Btn5Y.Location = new System.Drawing.Point(411, 45);
+            this.Btn5Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn5Y.Name = "Btn5Y";
-            this.Btn5Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn5Y.Size = new System.Drawing.Size(80, 72);
             this.Btn5Y.TabIndex = 0;
             this.Btn5Y.UseVisualStyleBackColor = true;
             this.Btn5Y.Click += new System.EventHandler(this.Btn5Y_Click);
             // 
             // Btn6Y
             // 
-            this.Btn6Y.Location = new System.Drawing.Point(10, 55);
+            this.Btn6Y.Location = new System.Drawing.Point(27, 131);
+            this.Btn6Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn6Y.Name = "Btn6Y";
-            this.Btn6Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn6Y.Size = new System.Drawing.Size(80, 72);
             this.Btn6Y.TabIndex = 0;
             this.Btn6Y.UseVisualStyleBackColor = true;
             this.Btn6Y.Click += new System.EventHandler(this.Btn6Y_Click);
             // 
             // Btn7Y
             // 
-            this.Btn7Y.Location = new System.Drawing.Point(46, 55);
+            this.Btn7Y.Location = new System.Drawing.Point(123, 131);
+            this.Btn7Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn7Y.Name = "Btn7Y";
-            this.Btn7Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn7Y.Size = new System.Drawing.Size(80, 72);
             this.Btn7Y.TabIndex = 0;
             this.Btn7Y.UseVisualStyleBackColor = true;
             this.Btn7Y.Click += new System.EventHandler(this.Btn7Y_Click);
             // 
             // Btn8Y
             // 
-            this.Btn8Y.Location = new System.Drawing.Point(82, 55);
+            this.Btn8Y.Location = new System.Drawing.Point(219, 131);
+            this.Btn8Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn8Y.Name = "Btn8Y";
-            this.Btn8Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn8Y.Size = new System.Drawing.Size(80, 72);
             this.Btn8Y.TabIndex = 0;
             this.Btn8Y.UseVisualStyleBackColor = true;
             this.Btn8Y.Click += new System.EventHandler(this.Btn8Y_Click);
             // 
             // Btn9Y
             // 
-            this.Btn9Y.Location = new System.Drawing.Point(118, 55);
+            this.Btn9Y.Location = new System.Drawing.Point(315, 131);
+            this.Btn9Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn9Y.Name = "Btn9Y";
-            this.Btn9Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn9Y.Size = new System.Drawing.Size(80, 72);
             this.Btn9Y.TabIndex = 0;
             this.Btn9Y.UseVisualStyleBackColor = true;
             this.Btn9Y.Click += new System.EventHandler(this.Btn9Y_Click);
             // 
             // Btn10Y
             // 
-            this.Btn10Y.Location = new System.Drawing.Point(154, 55);
+            this.Btn10Y.Location = new System.Drawing.Point(411, 131);
+            this.Btn10Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn10Y.Name = "Btn10Y";
-            this.Btn10Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn10Y.Size = new System.Drawing.Size(80, 72);
             this.Btn10Y.TabIndex = 0;
             this.Btn10Y.UseVisualStyleBackColor = true;
             this.Btn10Y.Click += new System.EventHandler(this.Btn10Y_Click);
             // 
             // Btn11Y
             // 
-            this.Btn11Y.Location = new System.Drawing.Point(10, 91);
+            this.Btn11Y.Location = new System.Drawing.Point(27, 217);
+            this.Btn11Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn11Y.Name = "Btn11Y";
-            this.Btn11Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn11Y.Size = new System.Drawing.Size(80, 72);
             this.Btn11Y.TabIndex = 0;
             this.Btn11Y.UseVisualStyleBackColor = true;
             this.Btn11Y.Click += new System.EventHandler(this.Btn11Y_Click);
             // 
             // Btn12Y
             // 
-            this.Btn12Y.Location = new System.Drawing.Point(46, 91);
+            this.Btn12Y.Location = new System.Drawing.Point(123, 217);
+            this.Btn12Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn12Y.Name = "Btn12Y";
-            this.Btn12Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn12Y.Size = new System.Drawing.Size(80, 72);
             this.Btn12Y.TabIndex = 0;
             this.Btn12Y.UseVisualStyleBackColor = true;
             this.Btn12Y.Click += new System.EventHandler(this.Btn12Y_Click);
             // 
             // Btn13Y
             // 
-            this.Btn13Y.Location = new System.Drawing.Point(82, 91);
+            this.Btn13Y.Location = new System.Drawing.Point(219, 217);
+            this.Btn13Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn13Y.Name = "Btn13Y";
-            this.Btn13Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn13Y.Size = new System.Drawing.Size(80, 72);
             this.Btn13Y.TabIndex = 0;
             this.Btn13Y.UseVisualStyleBackColor = true;
             this.Btn13Y.Click += new System.EventHandler(this.Btn13Y_Click);
             // 
             // Btn14Y
             // 
-            this.Btn14Y.Location = new System.Drawing.Point(118, 91);
+            this.Btn14Y.Location = new System.Drawing.Point(315, 217);
+            this.Btn14Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn14Y.Name = "Btn14Y";
-            this.Btn14Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn14Y.Size = new System.Drawing.Size(80, 72);
             this.Btn14Y.TabIndex = 0;
             this.Btn14Y.UseVisualStyleBackColor = true;
             this.Btn14Y.Click += new System.EventHandler(this.Btn14Y_Click);
             // 
             // Btn15Y
             // 
-            this.Btn15Y.Location = new System.Drawing.Point(154, 91);
+            this.Btn15Y.Location = new System.Drawing.Point(411, 217);
+            this.Btn15Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn15Y.Name = "Btn15Y";
-            this.Btn15Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn15Y.Size = new System.Drawing.Size(80, 72);
             this.Btn15Y.TabIndex = 0;
             this.Btn15Y.UseVisualStyleBackColor = true;
             this.Btn15Y.Click += new System.EventHandler(this.Btn15Y_Click);
             // 
             // Btn16Y
             // 
-            this.Btn16Y.Location = new System.Drawing.Point(10, 127);
+            this.Btn16Y.Location = new System.Drawing.Point(27, 303);
+            this.Btn16Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn16Y.Name = "Btn16Y";
-            this.Btn16Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn16Y.Size = new System.Drawing.Size(80, 72);
             this.Btn16Y.TabIndex = 0;
             this.Btn16Y.UseVisualStyleBackColor = true;
             this.Btn16Y.Click += new System.EventHandler(this.Btn16Y_Click);
             // 
             // Btn17Y
             // 
-            this.Btn17Y.Location = new System.Drawing.Point(46, 127);
+            this.Btn17Y.Location = new System.Drawing.Point(123, 303);
+            this.Btn17Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn17Y.Name = "Btn17Y";
-            this.Btn17Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn17Y.Size = new System.Drawing.Size(80, 72);
             this.Btn17Y.TabIndex = 0;
             this.Btn17Y.UseVisualStyleBackColor = true;
             this.Btn17Y.Click += new System.EventHandler(this.Btn17Y_Click);
             // 
             // Btn18Y
             // 
-            this.Btn18Y.Location = new System.Drawing.Point(82, 127);
+            this.Btn18Y.Location = new System.Drawing.Point(219, 303);
+            this.Btn18Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn18Y.Name = "Btn18Y";
-            this.Btn18Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn18Y.Size = new System.Drawing.Size(80, 72);
             this.Btn18Y.TabIndex = 0;
             this.Btn18Y.UseVisualStyleBackColor = true;
             this.Btn18Y.Click += new System.EventHandler(this.Btn18Y_Click);
             // 
             // Btn19Y
             // 
-            this.Btn19Y.Location = new System.Drawing.Point(118, 127);
+            this.Btn19Y.Location = new System.Drawing.Point(315, 303);
+            this.Btn19Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn19Y.Name = "Btn19Y";
-            this.Btn19Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn19Y.Size = new System.Drawing.Size(80, 72);
             this.Btn19Y.TabIndex = 0;
             this.Btn19Y.UseVisualStyleBackColor = true;
             this.Btn19Y.Click += new System.EventHandler(this.Btn19Y_Click);
             // 
             // Btn20Y
             // 
-            this.Btn20Y.Location = new System.Drawing.Point(154, 127);
+            this.Btn20Y.Location = new System.Drawing.Point(411, 303);
+            this.Btn20Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn20Y.Name = "Btn20Y";
-            this.Btn20Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn20Y.Size = new System.Drawing.Size(80, 72);
             this.Btn20Y.TabIndex = 0;
             this.Btn20Y.UseVisualStyleBackColor = true;
             this.Btn20Y.Click += new System.EventHandler(this.Btn20Y_Click);
             // 
             // Btn21Y
             // 
-            this.Btn21Y.Location = new System.Drawing.Point(10, 163);
+            this.Btn21Y.Location = new System.Drawing.Point(27, 389);
+            this.Btn21Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn21Y.Name = "Btn21Y";
-            this.Btn21Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn21Y.Size = new System.Drawing.Size(80, 72);
             this.Btn21Y.TabIndex = 0;
             this.Btn21Y.UseVisualStyleBackColor = true;
             this.Btn21Y.Click += new System.EventHandler(this.Btn21Y_Click);
             // 
             // Btn22Y
             // 
-            this.Btn22Y.Location = new System.Drawing.Point(46, 163);
+            this.Btn22Y.Location = new System.Drawing.Point(123, 389);
+            this.Btn22Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn22Y.Name = "Btn22Y";
-            this.Btn22Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn22Y.Size = new System.Drawing.Size(80, 72);
             this.Btn22Y.TabIndex = 0;
             this.Btn22Y.UseVisualStyleBackColor = true;
             this.Btn22Y.Click += new System.EventHandler(this.Btn22Y_Click);
             // 
             // Btn23Y
             // 
-            this.Btn23Y.Location = new System.Drawing.Point(82, 163);
+            this.Btn23Y.Location = new System.Drawing.Point(219, 389);
+            this.Btn23Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn23Y.Name = "Btn23Y";
-            this.Btn23Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn23Y.Size = new System.Drawing.Size(80, 72);
             this.Btn23Y.TabIndex = 0;
             this.Btn23Y.UseVisualStyleBackColor = true;
             this.Btn23Y.Click += new System.EventHandler(this.Btn23Y_Click);
             // 
             // Btn24Y
             // 
-            this.Btn24Y.Location = new System.Drawing.Point(118, 163);
+            this.Btn24Y.Location = new System.Drawing.Point(315, 389);
+            this.Btn24Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn24Y.Name = "Btn24Y";
-            this.Btn24Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn24Y.Size = new System.Drawing.Size(80, 72);
             this.Btn24Y.TabIndex = 0;
             this.Btn24Y.UseVisualStyleBackColor = true;
             this.Btn24Y.Click += new System.EventHandler(this.Btn24Y_Click);
             // 
             // Btn25Y
             // 
-            this.Btn25Y.Location = new System.Drawing.Point(154, 163);
+            this.Btn25Y.Location = new System.Drawing.Point(411, 389);
+            this.Btn25Y.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn25Y.Name = "Btn25Y";
-            this.Btn25Y.Size = new System.Drawing.Size(30, 30);
+            this.Btn25Y.Size = new System.Drawing.Size(80, 72);
             this.Btn25Y.TabIndex = 0;
             this.Btn25Y.UseVisualStyleBackColor = true;
             this.Btn25Y.Click += new System.EventHandler(this.Btn25Y_Click);
             // 
             // Btn1O
             // 
-            this.Btn1O.Location = new System.Drawing.Point(10, 19);
+            this.Btn1O.Location = new System.Drawing.Point(27, 45);
+            this.Btn1O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn1O.Name = "Btn1O";
-            this.Btn1O.Size = new System.Drawing.Size(30, 30);
+            this.Btn1O.Size = new System.Drawing.Size(80, 72);
             this.Btn1O.TabIndex = 0;
             this.Btn1O.UseVisualStyleBackColor = true;
             this.Btn1O.Click += new System.EventHandler(this.Btn1O_Click);
             // 
             // Btn2O
             // 
-            this.Btn2O.Location = new System.Drawing.Point(46, 19);
+            this.Btn2O.Location = new System.Drawing.Point(123, 45);
+            this.Btn2O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn2O.Name = "Btn2O";
-            this.Btn2O.Size = new System.Drawing.Size(30, 30);
+            this.Btn2O.Size = new System.Drawing.Size(80, 72);
             this.Btn2O.TabIndex = 0;
             this.Btn2O.UseVisualStyleBackColor = true;
             this.Btn2O.Click += new System.EventHandler(this.Btn2O_Click);
             // 
             // Btn6O
             // 
-            this.Btn6O.Location = new System.Drawing.Point(10, 55);
+            this.Btn6O.Location = new System.Drawing.Point(27, 131);
+            this.Btn6O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn6O.Name = "Btn6O";
-            this.Btn6O.Size = new System.Drawing.Size(30, 30);
+            this.Btn6O.Size = new System.Drawing.Size(80, 72);
             this.Btn6O.TabIndex = 0;
             this.Btn6O.UseVisualStyleBackColor = true;
             this.Btn6O.Click += new System.EventHandler(this.Btn6O_Click);
             // 
             // Btn3O
             // 
-            this.Btn3O.Location = new System.Drawing.Point(82, 19);
+            this.Btn3O.Location = new System.Drawing.Point(219, 45);
+            this.Btn3O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn3O.Name = "Btn3O";
-            this.Btn3O.Size = new System.Drawing.Size(30, 30);
+            this.Btn3O.Size = new System.Drawing.Size(80, 72);
             this.Btn3O.TabIndex = 0;
             this.Btn3O.UseVisualStyleBackColor = true;
             this.Btn3O.Click += new System.EventHandler(this.Btn3O_Click);
             // 
             // Btn11O
             // 
-            this.Btn11O.Location = new System.Drawing.Point(10, 91);
+            this.Btn11O.Location = new System.Drawing.Point(27, 217);
+            this.Btn11O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn11O.Name = "Btn11O";
-            this.Btn11O.Size = new System.Drawing.Size(30, 30);
+            this.Btn11O.Size = new System.Drawing.Size(80, 72);
             this.Btn11O.TabIndex = 0;
             this.Btn11O.UseVisualStyleBackColor = true;
             this.Btn11O.Click += new System.EventHandler(this.Btn11O_Click);
             // 
             // Btn7O
             // 
-            this.Btn7O.Location = new System.Drawing.Point(46, 55);
+            this.Btn7O.Location = new System.Drawing.Point(123, 131);
+            this.Btn7O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn7O.Name = "Btn7O";
-            this.Btn7O.Size = new System.Drawing.Size(30, 30);
+            this.Btn7O.Size = new System.Drawing.Size(80, 72);
             this.Btn7O.TabIndex = 0;
             this.Btn7O.UseVisualStyleBackColor = true;
             this.Btn7O.Click += new System.EventHandler(this.Btn7O_Click);
             // 
             // Btn16O
             // 
-            this.Btn16O.Location = new System.Drawing.Point(10, 127);
+            this.Btn16O.Location = new System.Drawing.Point(27, 303);
+            this.Btn16O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn16O.Name = "Btn16O";
-            this.Btn16O.Size = new System.Drawing.Size(30, 30);
+            this.Btn16O.Size = new System.Drawing.Size(80, 72);
             this.Btn16O.TabIndex = 0;
             this.Btn16O.UseVisualStyleBackColor = true;
             this.Btn16O.Click += new System.EventHandler(this.Btn16O_Click);
             // 
             // Btn8O
             // 
-            this.Btn8O.Location = new System.Drawing.Point(82, 55);
+            this.Btn8O.Location = new System.Drawing.Point(219, 131);
+            this.Btn8O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn8O.Name = "Btn8O";
-            this.Btn8O.Size = new System.Drawing.Size(30, 30);
+            this.Btn8O.Size = new System.Drawing.Size(80, 72);
             this.Btn8O.TabIndex = 0;
             this.Btn8O.UseVisualStyleBackColor = true;
             this.Btn8O.Click += new System.EventHandler(this.Btn8O_Click);
             // 
             // Btn21O
             // 
-            this.Btn21O.Location = new System.Drawing.Point(10, 163);
+            this.Btn21O.Location = new System.Drawing.Point(27, 389);
+            this.Btn21O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn21O.Name = "Btn21O";
-            this.Btn21O.Size = new System.Drawing.Size(30, 30);
+            this.Btn21O.Size = new System.Drawing.Size(80, 72);
             this.Btn21O.TabIndex = 0;
             this.Btn21O.UseVisualStyleBackColor = true;
             this.Btn21O.Click += new System.EventHandler(this.Btn21O_Click);
             // 
             // Btn12O
             // 
-            this.Btn12O.Location = new System.Drawing.Point(46, 91);
+            this.Btn12O.Location = new System.Drawing.Point(123, 217);
+            this.Btn12O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn12O.Name = "Btn12O";
-            this.Btn12O.Size = new System.Drawing.Size(30, 30);
+            this.Btn12O.Size = new System.Drawing.Size(80, 72);
             this.Btn12O.TabIndex = 0;
             this.Btn12O.UseVisualStyleBackColor = true;
             this.Btn12O.Click += new System.EventHandler(this.Btn12O_Click);
             // 
             // Btn13O
             // 
-            this.Btn13O.Location = new System.Drawing.Point(82, 91);
+            this.Btn13O.Location = new System.Drawing.Point(219, 217);
+            this.Btn13O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn13O.Name = "Btn13O";
-            this.Btn13O.Size = new System.Drawing.Size(30, 30);
+            this.Btn13O.Size = new System.Drawing.Size(80, 72);
             this.Btn13O.TabIndex = 0;
             this.Btn13O.UseVisualStyleBackColor = true;
             this.Btn13O.Click += new System.EventHandler(this.Btn13O_Click);
             // 
             // Btn17O
             // 
-            this.Btn17O.Location = new System.Drawing.Point(46, 127);
+            this.Btn17O.Location = new System.Drawing.Point(123, 303);
+            this.Btn17O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn17O.Name = "Btn17O";
-            this.Btn17O.Size = new System.Drawing.Size(30, 30);
+            this.Btn17O.Size = new System.Drawing.Size(80, 72);
             this.Btn17O.TabIndex = 0;
             this.Btn17O.UseVisualStyleBackColor = true;
             this.Btn17O.Click += new System.EventHandler(this.Btn17O_Click);
             // 
             // Btn18O
             // 
-            this.Btn18O.Location = new System.Drawing.Point(82, 127);
+            this.Btn18O.Location = new System.Drawing.Point(219, 303);
+            this.Btn18O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn18O.Name = "Btn18O";
-            this.Btn18O.Size = new System.Drawing.Size(30, 30);
+            this.Btn18O.Size = new System.Drawing.Size(80, 72);
             this.Btn18O.TabIndex = 0;
             this.Btn18O.UseVisualStyleBackColor = true;
             this.Btn18O.Click += new System.EventHandler(this.Btn18O_Click);
             // 
             // Btn22O
             // 
-            this.Btn22O.Location = new System.Drawing.Point(46, 163);
+            this.Btn22O.Location = new System.Drawing.Point(123, 389);
+            this.Btn22O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn22O.Name = "Btn22O";
-            this.Btn22O.Size = new System.Drawing.Size(30, 30);
+            this.Btn22O.Size = new System.Drawing.Size(80, 72);
             this.Btn22O.TabIndex = 0;
             this.Btn22O.UseVisualStyleBackColor = true;
             this.Btn22O.Click += new System.EventHandler(this.Btn22O_Click);
             // 
             // Btn23O
             // 
-            this.Btn23O.Location = new System.Drawing.Point(82, 163);
+            this.Btn23O.Location = new System.Drawing.Point(219, 389);
+            this.Btn23O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn23O.Name = "Btn23O";
-            this.Btn23O.Size = new System.Drawing.Size(30, 30);
+            this.Btn23O.Size = new System.Drawing.Size(80, 72);
             this.Btn23O.TabIndex = 0;
             this.Btn23O.UseVisualStyleBackColor = true;
             this.Btn23O.Click += new System.EventHandler(this.Btn23O_Click);
             // 
             // Btn4O
             // 
-            this.Btn4O.Location = new System.Drawing.Point(118, 19);
+            this.Btn4O.Location = new System.Drawing.Point(315, 45);
+            this.Btn4O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn4O.Name = "Btn4O";
-            this.Btn4O.Size = new System.Drawing.Size(30, 30);
+            this.Btn4O.Size = new System.Drawing.Size(80, 72);
             this.Btn4O.TabIndex = 0;
             this.Btn4O.UseVisualStyleBackColor = true;
             this.Btn4O.Click += new System.EventHandler(this.Btn4O_Click);
             // 
             // Btn9O
             // 
-            this.Btn9O.Location = new System.Drawing.Point(118, 55);
+            this.Btn9O.Location = new System.Drawing.Point(315, 131);
+            this.Btn9O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn9O.Name = "Btn9O";
-            this.Btn9O.Size = new System.Drawing.Size(30, 30);
+            this.Btn9O.Size = new System.Drawing.Size(80, 72);
             this.Btn9O.TabIndex = 0;
             this.Btn9O.UseVisualStyleBackColor = true;
             this.Btn9O.Click += new System.EventHandler(this.Btn9O_Click);
             // 
             // Btn14O
             // 
-            this.Btn14O.Location = new System.Drawing.Point(118, 91);
+            this.Btn14O.Location = new System.Drawing.Point(315, 217);
+            this.Btn14O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn14O.Name = "Btn14O";
-            this.Btn14O.Size = new System.Drawing.Size(30, 30);
+            this.Btn14O.Size = new System.Drawing.Size(80, 72);
             this.Btn14O.TabIndex = 0;
             this.Btn14O.UseVisualStyleBackColor = true;
             this.Btn14O.Click += new System.EventHandler(this.Btn14O_Click);
             // 
             // Btn19O
             // 
-            this.Btn19O.Location = new System.Drawing.Point(118, 127);
+            this.Btn19O.Location = new System.Drawing.Point(315, 303);
+            this.Btn19O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn19O.Name = "Btn19O";
-            this.Btn19O.Size = new System.Drawing.Size(30, 30);
+            this.Btn19O.Size = new System.Drawing.Size(80, 72);
             this.Btn19O.TabIndex = 0;
             this.Btn19O.UseVisualStyleBackColor = true;
             this.Btn19O.Click += new System.EventHandler(this.Btn19O_Click);
             // 
             // Btn24O
             // 
-            this.Btn24O.Location = new System.Drawing.Point(118, 163);
+            this.Btn24O.Location = new System.Drawing.Point(315, 389);
+            this.Btn24O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn24O.Name = "Btn24O";
-            this.Btn24O.Size = new System.Drawing.Size(30, 30);
+            this.Btn24O.Size = new System.Drawing.Size(80, 72);
             this.Btn24O.TabIndex = 0;
             this.Btn24O.UseVisualStyleBackColor = true;
             this.Btn24O.Click += new System.EventHandler(this.Btn24O_Click);
             // 
             // Btn5O
             // 
-            this.Btn5O.Location = new System.Drawing.Point(154, 19);
+            this.Btn5O.Location = new System.Drawing.Point(411, 45);
+            this.Btn5O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn5O.Name = "Btn5O";
-            this.Btn5O.Size = new System.Drawing.Size(30, 30);
+            this.Btn5O.Size = new System.Drawing.Size(80, 72);
             this.Btn5O.TabIndex = 0;
             this.Btn5O.UseVisualStyleBackColor = true;
             this.Btn5O.Click += new System.EventHandler(this.Btn5O_Click);
             // 
             // Btn10O
             // 
-            this.Btn10O.Location = new System.Drawing.Point(154, 55);
+            this.Btn10O.Location = new System.Drawing.Point(411, 131);
+            this.Btn10O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn10O.Name = "Btn10O";
-            this.Btn10O.Size = new System.Drawing.Size(30, 30);
+            this.Btn10O.Size = new System.Drawing.Size(80, 72);
             this.Btn10O.TabIndex = 0;
             this.Btn10O.UseVisualStyleBackColor = true;
             this.Btn10O.Click += new System.EventHandler(this.Btn10O_Click);
             // 
             // Btn15O
             // 
-            this.Btn15O.Location = new System.Drawing.Point(154, 91);
+            this.Btn15O.Location = new System.Drawing.Point(411, 217);
+            this.Btn15O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn15O.Name = "Btn15O";
-            this.Btn15O.Size = new System.Drawing.Size(30, 30);
+            this.Btn15O.Size = new System.Drawing.Size(80, 72);
             this.Btn15O.TabIndex = 0;
             this.Btn15O.UseVisualStyleBackColor = true;
             this.Btn15O.Click += new System.EventHandler(this.Btn15O_Click);
             // 
             // Btn20O
             // 
-            this.Btn20O.Location = new System.Drawing.Point(154, 127);
+            this.Btn20O.Location = new System.Drawing.Point(411, 303);
+            this.Btn20O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn20O.Name = "Btn20O";
-            this.Btn20O.Size = new System.Drawing.Size(30, 30);
+            this.Btn20O.Size = new System.Drawing.Size(80, 72);
             this.Btn20O.TabIndex = 0;
             this.Btn20O.UseVisualStyleBackColor = true;
             this.Btn20O.Click += new System.EventHandler(this.Btn20O_Click);
             // 
             // Btn25O
             // 
-            this.Btn25O.Location = new System.Drawing.Point(154, 163);
+            this.Btn25O.Location = new System.Drawing.Point(411, 389);
+            this.Btn25O.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Btn25O.Name = "Btn25O";
-            this.Btn25O.Size = new System.Drawing.Size(30, 30);
+            this.Btn25O.Size = new System.Drawing.Size(80, 72);
             this.Btn25O.TabIndex = 0;
             this.Btn25O.UseVisualStyleBackColor = true;
             this.Btn25O.Click += new System.EventHandler(this.Btn25O_Click);
@@ -564,9 +612,11 @@
             this.groupBox1.Controls.Add(this.Btn19Y);
             this.groupBox1.Controls.Add(this.Btn9Y);
             this.groupBox1.Controls.Add(this.Btn14Y);
-            this.groupBox1.Location = new System.Drawing.Point(12, 78);
+            this.groupBox1.Location = new System.Drawing.Point(32, 186);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(193, 201);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.groupBox1.Size = new System.Drawing.Size(515, 479);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "You";
@@ -598,9 +648,11 @@
             this.groupBox2.Controls.Add(this.Btn23O);
             this.groupBox2.Controls.Add(this.Btn18O);
             this.groupBox2.Controls.Add(this.Btn22O);
-            this.groupBox2.Location = new System.Drawing.Point(261, 78);
+            this.groupBox2.Location = new System.Drawing.Point(696, 186);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(193, 201);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.groupBox2.Size = new System.Drawing.Size(515, 479);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Opponent";
@@ -608,41 +660,23 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(32, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(86, 31);
             this.label1.TabIndex = 3;
             this.label1.Text = "label1";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(237, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "label3";
-            // 
             // Game
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 288);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1245, 687);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "Game";
             this.Text = "Game";
             this.groupBox1.ResumeLayout(false);
@@ -707,7 +741,5 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
     }
 }

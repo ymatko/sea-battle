@@ -23,7 +23,7 @@ namespace SeaBattle.View
 
             if (isServer)
             {
-                label1.Text = "isServer";
+                label1.Text = "Pick your ships";
                 server = new TcpListener(System.Net.IPAddress.Any, 5732);
                 server.Start();
                 sock = server.AcceptSocket();
@@ -34,7 +34,7 @@ namespace SeaBattle.View
             {
                 FreezeBoardO();
                 UnfreezeBoardY();
-                label1.Text = "isHost";
+                label1.Text = "Pick your ships";
                 try
                 {
                     client = new TcpClient(ip, 5732);
@@ -49,9 +49,14 @@ namespace SeaBattle.View
         }
         private void MessageReceiver_DoWork(object sender, DoWorkEventArgs e)
         {
+            if (CheckGameStatus())
+                return;
             FreezeBoardO();
+            label1.Text = "Opponent's Turn!";
             ReceiveMove();
-            UnfreezeBoardO();
+            label1.Text = "Your Turn!";
+            if (!CheckGameStatus())
+                UnfreezeBoardO();
         }
 
         private Socket sock;
@@ -61,17 +66,19 @@ namespace SeaBattle.View
         private BackgroundWorker MessageReceiver = new BackgroundWorker();
         int shipsCount = 0;
         string shipsY;
+        int gameStatus = 0;
+        int shipInGame = 4;
 
         private void StartGame(Button button)
         {
-            if (shipsCount >= 2)
+            if (shipsCount >= shipInGame)
             {
                 SendShipsForOpponent();
             }
             else
             {
                 CreateShip(button);
-                if (shipsCount == 2)
+                if (shipsCount == shipInGame)
                     StartGame(button);
             }
         }
@@ -111,9 +118,28 @@ namespace SeaBattle.View
         {
             int isShips = shipsY.IndexOf(button.Name);
             if(isShips != -1)
+            {
                 button.BackColor = Color.Red;
+                gameStatus++;
+            }
             else
                 button.Text = "X";
+        }
+
+        private bool CheckGameStatus()
+        {
+            if(gameStatus == shipInGame)
+            {
+                FreezeBoardO();
+                FreezeBoardY();
+                MessageBox.Show("You Win!");
+                byte[] num = { 26 };
+                sock.Send(num);
+                MessageReceiver.RunWorkerAsync();
+                return true;
+            }
+            else
+                return false;
         }
 
         private void ReceiveMove()
@@ -196,6 +222,11 @@ namespace SeaBattle.View
                     break;
                 case 25:
                     ButtonRecive(Btn25Y);
+                    break;
+                case 26:
+                    FreezeBoardO();
+                    FreezeBoardY();
+                    MessageBox.Show("You Lose", "SeaBattle");
                     break;
                 default:
                     shipsY = Encoding.UTF8.GetString(buffer);
